@@ -29,9 +29,25 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(corsOrigins)
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.SetIsOriginAllowed(origin =>
+        {
+            // Allow specific origins from config
+            if (corsOrigins.Contains(origin))
+                return true;
+            
+            // Allow any Vercel deployment (for preview/production)
+            if (origin.StartsWith("https://") && origin.EndsWith(".vercel.app"))
+                return true;
+            
+            // Allow localhost for development
+            if (origin.StartsWith("http://localhost"))
+                return true;
+            
+            return false;
+        })
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
 
