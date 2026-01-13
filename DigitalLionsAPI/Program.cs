@@ -11,7 +11,9 @@ if (string.IsNullOrEmpty(dataFilePath))
 {
     dataFilePath = "Data/stories.json";
 }
-var fullDataPath = Path.Combine(builder.Environment.ContentRootPath, dataFilePath);
+// Use AppContext.BaseDirectory to point to bin/Debug/net8.0 where the app runs
+// This ensures the data file is writable (not in the source directory)
+var fullDataPath = Path.Combine(AppContext.BaseDirectory, dataFilePath);
 
 builder.Services.AddSingleton<IStoryService>(sp =>
 {

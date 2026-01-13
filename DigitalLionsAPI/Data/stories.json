@@ -8,7 +8,7 @@
       "Description": "Full details on how the program reached over 500 students in its first year, focusing on Python and Web Development fundamentals. The initiative has transformed lives by providing young people with marketable skills and connecting them to the global digital economy.",
       "ImageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7",
       "IsFeatured": true,
-      "Likes": 131
+      "Likes": 134
     },
     {
       "Id": 2,
@@ -18,7 +18,7 @@
       "Description": "A deep dive into the engineering of the solar pumps and the 30% increase in crop yield seen by the community. This project demonstrates how renewable energy can drive agricultural productivity while protecting the environment.",
       "ImageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
       "IsFeatured": false,
-      "Likes": 94
+      "Likes": 95
     },
     {
       "Id": 3,
@@ -28,7 +28,7 @@
       "Description": "How we built a secure payment gateway and logistics tracking for hand-crafted goods exported to 12 countries. The platform has enabled over 200 artisans to triple their income and reach customers worldwide.",
       "ImageUrl": "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
       "IsFeatured": true,
-      "Likes": 212
+      "Likes": 214
     },
     {
       "Id": 4,
@@ -136,7 +136,7 @@
       "Category": "Health",
       "Summary": "Distributing improved cookstoves to reduce indoor air pollution and protect respiratory health.",
       "Description": "Traditional open-fire cooking methods expose millions to harmful smoke, causing respiratory illnesses. Our program has distributed 3,200 improved cookstoves that reduce smoke emissions by 80% while using 50% less firewood. Each stove costs $25 to produce and install, with families paying a subsidized $10. Training sessions teach proper stove maintenance and safe cooking practices. Health surveys show a 60% reduction in respiratory complaints among users, and reduced fuel needs save families approximately $120 annually while decreasing deforestation pressure.",
-      "ImageUrl": "https://images.unsplash.com/photo-1583429602688-03c60d5a8fb9",
+      "ImageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136",
       "IsFeatured": false,
       "Likes": 145
     },
@@ -186,7 +186,7 @@
       "Category": "Education",
       "Summary": "Providing bicycles to students who live far from school to improve attendance and reduce dropout rates.",
       "Description": "Many students in rural areas walk 5-10 kilometers each way to reach school, leading to fatigue, lateness, and dropout. We\u0027ve distributed 800 bicycles to students, prioritizing girls and those living furthest from school. Recipients sign agreements to maintain the bicycles and continue their education. The program includes basic bicycle maintenance training and supplies spare parts through school-based mechanics. School attendance rates among recipients have improved from 67% to 91%, and dropout rates have fallen by half.",
-      "ImageUrl": "https://images.unsplash.com/photo-1511994477422-b69e44347b4b",
+      "ImageUrl": "https://images.unsplash.com/photo-1485965120184-e220f721d03e",
       "IsFeatured": false,
       "Likes": 203
     },
@@ -238,7 +238,7 @@
       "Description": "Mental health remains heavily stigmatized, preventing many from seeking help. Our campaign uses community theater, radio programs, and peer educators to raise awareness and normalize conversations about mental health. We\u0027ve trained 30 community counselors who provide basic support and referrals, and established support groups for those dealing with depression, anxiety, and trauma. The program has reached over 25,000 people through outreach activities, and counseling services have assisted 800 individuals. Post-campaign surveys show a 45% increase in community members who would consider seeking mental health support.",
       "ImageUrl": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34",
       "IsFeatured": false,
-      "Likes": 194
+      "Likes": 197
     },
     {
       "Id": 25,
@@ -266,7 +266,7 @@
       "Category": "Economic Growth",
       "Summary": "Teaching essential money management skills to help families build savings and make informed financial decisions.",
       "Description": "These interactive workshops cover budgeting, saving, debt management, and basic investment concepts using practical examples relevant to participants\u0027 lives. Sessions are offered in community centers and workplaces, reaching 1,800 people in the past year. Participants create personal budgets, set savings goals, and learn to evaluate financial products. Follow-up surveys show that 76% of participants have started regular savings, and household debt levels have decreased by an average of 30%. The program has been particularly impactful for women managing household finances and young people making their first financial decisions.",
-      "ImageUrl": "https://images.unsplash.com/photo-1554224311-beee460201b4",
+      "ImageUrl": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e",
       "IsFeatured": false,
       "Likes": 119
     }
