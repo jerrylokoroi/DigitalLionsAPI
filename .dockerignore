@@ -1,0 +1,33 @@
+# Build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+**/.dockerignore
+**/Dockerfile*
+
+# Test results
+**/TestResults/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

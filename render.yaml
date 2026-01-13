@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: digitallions-api
+    env: docker
+    plan: free
+    healthCheckPath: /stories
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://+:10000
