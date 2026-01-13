@@ -1,4 +1,4 @@
-﻿{
+{
   "ImpactStories": [
     {
       "Id": 1,
@@ -8,7 +8,7 @@
       "Description": "Full details on how the program reached over 500 students in its first year, focusing on Python and Web Development fundamentals. The initiative has transformed lives by providing young people with marketable skills and connecting them to the global digital economy.",
       "ImageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7",
       "IsFeatured": true,
-      "Likes": 124
+      "Likes": 131
     },
     {
       "Id": 2,
@@ -18,7 +18,7 @@
       "Description": "A deep dive into the engineering of the solar pumps and the 30% increase in crop yield seen by the community. This project demonstrates how renewable energy can drive agricultural productivity while protecting the environment.",
       "ImageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
       "IsFeatured": false,
-      "Likes": 89
+      "Likes": 94
     },
     {
       "Id": 3,
@@ -28,7 +28,247 @@
       "Description": "How we built a secure payment gateway and logistics tracking for hand-crafted goods exported to 12 countries. The platform has enabled over 200 artisans to triple their income and reach customers worldwide.",
       "ImageUrl": "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
       "IsFeatured": true,
-      "Likes": 210
+      "Likes": 212
+    },
+    {
+      "Id": 4,
+      "Title": "Mobile Health Clinics Reach Remote Villages",
+      "Category": "Health",
+      "Summary": "Delivering essential healthcare services to underserved communities through mobile medical units.",
+      "Description": "Our fleet of three mobile clinics has provided free medical consultations, vaccinations, and maternal health services to over 8,000 people across 45 rural villages. Each unit is equipped with basic diagnostic tools and staffed by qualified nurses and visiting doctors. The program has reduced preventable disease rates by 40% in target areas and improved prenatal care access for expectant mothers who previously had to travel over 50 kilometers to reach the nearest health facility.",
+      "ImageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+      "IsFeatured": false,
+      "Likes": 169
+    },
+    {
+      "Id": 5,
+      "Title": "Women in Tech Leadership Program",
+      "Category": "Youth Empowerment",
+      "Summary": "Training the next generation of female tech leaders through mentorship and skills development.",
+      "Description": "A comprehensive 12-month program combining technical training, leadership development, and industry mentorship. Over 200 young women have completed the program, with 85% securing employment or starting their own tech ventures within six months of graduation. Participants receive training in software development, project management, and entrepreneurship, alongside one-on-one mentoring from established professionals in the technology sector.",
+      "ImageUrl": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6",
+      "IsFeatured": true,
+      "Likes": 342
+    },
+    {
+      "Id": 6,
+      "Title": "Community Solar Power Initiative",
+      "Category": "Sustainability",
+      "Summary": "Installing solar panels in schools and community centers to reduce energy costs and carbon footprint.",
+      "Description": "Working with local electricians and international partners, we\u0027ve installed solar power systems in 18 schools and 7 community centers. These installations provide reliable electricity for the first time in many areas, enabling evening classes for adult learners and powering computer labs for students. The project has eliminated approximately 120 tons of CO2 emissions annually while saving communities over $45,000 in energy costs that can now be redirected to educational programs.",
+      "ImageUrl": "https://images.unsplash.com/photo-1509391366360-2e959784a276",
+      "IsFeatured": false,
+      "Likes": 93
+    },
+    {
+      "Id": 7,
+      "Title": "Agricultural Cooperative Network",
+      "Category": "Economic Growth",
+      "Summary": "Connecting small-scale farmers to form cooperatives that increase bargaining power and market access.",
+      "Description": "This initiative has united 450 smallholder farmers into six regional cooperatives, enabling them to negotiate better prices for seeds and fertilizer while accessing premium markets for their produce. Members receive training in organic farming techniques, financial literacy, and cooperative management. Average household income has increased by 65% since joining the cooperatives, and farmers now export specialty crops to urban markets and neighboring countries.",
+      "ImageUrl": "https://images.unsplash.com/photo-1574943320219-553eb213f72d",
+      "IsFeatured": false,
+      "Likes": 78
+    },
+    {
+      "Id": 8,
+      "Title": "Digital Literacy for Seniors",
+      "Category": "Digital Inclusion",
+      "Summary": "Teaching older adults essential digital skills to stay connected with family and access online services.",
+      "Description": "Our program has trained over 600 senior citizens in basic computer skills, smartphone usage, and internet safety. Classes are held in community centers and tailored to the pace and needs of older learners. Participants learn to video call with distant family members, access government services online, use banking apps, and recognize online scams. The program has dramatically reduced social isolation among elderly participants, with 90% reporting increased confidence in using technology.",
+      "ImageUrl": "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4",
+      "IsFeatured": false,
+      "Likes": 156
+    },
+    {
+      "Id": 9,
+      "Title": "Youth Sports and Mentorship Program",
+      "Category": "Community Development",
+      "Summary": "Using sports as a vehicle for youth development, teaching teamwork, discipline, and leadership.",
+      "Description": "This after-school program serves 300 young people aged 10-18, offering structured sports training alongside academic tutoring and life skills workshops. Volunteer coaches and mentors from the community work with participants on goal-setting, conflict resolution, and healthy lifestyle choices. The program has contributed to a 35% reduction in youth delinquency rates in participating neighborhoods and has helped 87 students secure sports scholarships for secondary education.",
+      "ImageUrl": "https://images.unsplash.com/photo-1517438476312-10d79c077509",
+      "IsFeatured": false,
+      "Likes": 201
+    },
+    {
+      "Id": 10,
+      "Title": "Reforestation and Carbon Offset Project",
+      "Category": "Environment",
+      "Summary": "Planting native trees to restore degraded land while creating economic opportunities for local communities.",
+      "Description": "In partnership with environmental scientists and local communities, we\u0027ve planted 150,000 native trees across 800 hectares of degraded land. The project employs 120 community members as tree planters and nursery workers, providing steady income while restoring ecosystems. Early results show improved soil quality, increased biodiversity, and the return of several native bird species. The trees are expected to sequester approximately 30,000 tons of CO2 over the next 20 years.",
+      "ImageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
+      "IsFeatured": true,
+      "Likes": 287
+    },
+    {
+      "Id": 11,
+      "Title": "Microfinance for Women Entrepreneurs",
+      "Category": "Economic Growth",
+      "Summary": "Providing small loans and business training to help women start and grow their own enterprises.",
+      "Description": "Our microfinance program has disbursed over $280,000 in small loans to 340 women entrepreneurs, with an impressive 97% repayment rate. Borrowers receive business planning support, financial management training, and ongoing mentorship. Funded businesses range from food processing and tailoring to mobile phone repair and retail shops. The average loan size is $800, and participating women have seen their household incomes increase by an average of 110% within the first year of receiving support.",
+      "ImageUrl": "https://images.unsplash.com/photo-1556740758-90de374c12ad",
+      "IsFeatured": false,
+      "Likes": 134
+    },
+    {
+      "Id": 12,
+      "Title": "STEM Summer Camps for Girls",
+      "Category": "Education",
+      "Summary": "Inspiring young girls to pursue careers in science and technology through hands-on learning experiences.",
+      "Description": "These intensive two-week camps introduce girls aged 12-16 to robotics, coding, environmental science, and engineering design. Each camp serves 50 participants and features female STEM professionals as instructors and role models. Activities include building simple robots, conducting water quality experiments, designing solar ovens, and creating mobile apps. Follow-up studies show that 70% of participants express increased interest in STEM careers, and many continue with coding clubs at their schools.",
+      "ImageUrl": "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+      "IsFeatured": false,
+      "Likes": 189
+    },
+    {
+      "Id": 13,
+      "Title": "Community Library Network",
+      "Category": "Education",
+      "Summary": "Establishing and maintaining libraries in underserved areas to promote literacy and lifelong learning.",
+      "Description": "We\u0027ve opened 12 community libraries serving populations with limited access to books and educational resources. Each library houses 2,000-3,500 books, offers free internet access, and hosts reading clubs, homework help sessions, and storytelling events for children. The libraries are managed by trained community librarians and supported by volunteer reading mentors. Over 4,500 people hold active library memberships, and children\u0027s literacy scores in participating communities have improved by an average of 23% over two years.",
+      "ImageUrl": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570",
+      "IsFeatured": false,
+      "Likes": 112
+    },
+    {
+      "Id": 14,
+      "Title": "Clean Cooking Stoves Initiative",
+      "Category": "Health",
+      "Summary": "Distributing improved cookstoves to reduce indoor air pollution and protect respiratory health.",
+      "Description": "Traditional open-fire cooking methods expose millions to harmful smoke, causing respiratory illnesses. Our program has distributed 3,200 improved cookstoves that reduce smoke emissions by 80% while using 50% less firewood. Each stove costs $25 to produce and install, with families paying a subsidized $10. Training sessions teach proper stove maintenance and safe cooking practices. Health surveys show a 60% reduction in respiratory complaints among users, and reduced fuel needs save families approximately $120 annually while decreasing deforestation pressure.",
+      "ImageUrl": "https://images.unsplash.com/photo-1583429602688-03c60d5a8fb9",
+      "IsFeatured": false,
+      "Likes": 145
+    },
+    {
+      "Id": 15,
+      "Title": "Rural Internet Connectivity Project",
+      "Category": "Technology",
+      "Summary": "Bringing reliable internet access to remote communities through innovative wireless technology.",
+      "Description": "Using a combination of wireless mesh networks and satellite backhaul, we\u0027ve connected 23 remote villages to the internet for the first time. The infrastructure supports local schools, health clinics, and small businesses while enabling residents to access government services, online education, and economic opportunities. Installation costs were kept low through community participation in tower construction and maintenance. The project serves approximately 15,000 people and has enabled the establishment of 40 new micro-businesses that rely on online platforms.",
+      "ImageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8",
+      "IsFeatured": true,
+      "Likes": 268
+    },
+    {
+      "Id": 16,
+      "Title": "Vocational Training Center Expansion",
+      "Category": "Youth Empowerment",
+      "Summary": "Equipping young people with practical skills in carpentry, welding, plumbing, and electrical work.",
+      "Description": "Our expanded vocational training center now serves 180 students annually across four trades. The six-month programs combine classroom instruction with hands-on workshops and culminate in three-month apprenticeships with local businesses. The curriculum is designed in consultation with employers to ensure graduates possess job-ready skills. Placement rates exceed 80%, with many graduates starting their own service businesses. The center has also begun accepting female students in traditionally male-dominated trades, with 35 young women currently enrolled.",
+      "ImageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
+      "IsFeatured": false,
+      "Likes": 97
+    },
+    {
+      "Id": 17,
+      "Title": "Urban Community Gardens",
+      "Category": "Community Development",
+      "Summary": "Transforming vacant lots into productive gardens that provide fresh food and green spaces.",
+      "Description": "Working with city authorities and residents, we\u0027ve established 9 community gardens on previously unused urban land. These gardens provide fresh vegetables for 450 families while creating green spaces for community gathering and children\u0027s environmental education. Participants learn organic gardening techniques, composting, and food preservation. The gardens operate on a cooperative model where members contribute labor and share the harvest. Some gardens generate surplus produce sold at local markets, funding garden maintenance and expansion.",
+      "ImageUrl": "https://images.unsplash.com/photo-1464226184884-fa280b87c399",
+      "IsFeatured": false,
+      "Likes": 123
+    },
+    {
+      "Id": 18,
+      "Title": "Maternal and Child Nutrition Program",
+      "Category": "Health",
+      "Summary": "Combating malnutrition through education, food supplements, and regular health monitoring.",
+      "Description": "This comprehensive program addresses malnutrition in children under five and pregnant women through multiple interventions. Community health workers conduct regular growth monitoring, provide nutritional supplements, and teach mothers about balanced diets using locally available foods. The program includes demonstration cooking sessions, kitchen gardens for vitamin-rich vegetables, and referrals for severe cases. Since launch, we\u0027ve served 2,800 families, and the rate of childhood stunting in program areas has decreased from 38% to 22%.",
+      "ImageUrl": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
+      "IsFeatured": false,
+      "Likes": 176
+    },
+    {
+      "Id": 19,
+      "Title": "Bicycle Distribution for School Access",
+      "Category": "Education",
+      "Summary": "Providing bicycles to students who live far from school to improve attendance and reduce dropout rates.",
+      "Description": "Many students in rural areas walk 5-10 kilometers each way to reach school, leading to fatigue, lateness, and dropout. We\u0027ve distributed 800 bicycles to students, prioritizing girls and those living furthest from school. Recipients sign agreements to maintain the bicycles and continue their education. The program includes basic bicycle maintenance training and supplies spare parts through school-based mechanics. School attendance rates among recipients have improved from 67% to 91%, and dropout rates have fallen by half.",
+      "ImageUrl": "https://images.unsplash.com/photo-1511994477422-b69e44347b4b",
+      "IsFeatured": false,
+      "Likes": 203
+    },
+    {
+      "Id": 20,
+      "Title": "Waste Management and Recycling Initiative",
+      "Category": "Sustainability",
+      "Summary": "Building local capacity to collect, sort, and recycle waste while creating green jobs.",
+      "Description": "This program addresses growing waste challenges in rapidly urbanizing areas by establishing collection systems and recycling centers. We\u0027ve trained 45 waste collectors, provided equipment, and set up sorting facilities where plastics, metals, and paper are separated for recycling. The initiative has diverted 280 tons of waste from open dumps in its first year, employs 60 people, and generates revenue by selling recyclable materials to processors. Community education campaigns have increased household waste separation, improving the efficiency and safety of the collection process.",
+      "ImageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b",
+      "IsFeatured": false,
+      "Likes": 88
+    },
+    {
+      "Id": 21,
+      "Title": "Digital Skills for Unemployed Youth",
+      "Category": "Digital Inclusion",
+      "Summary": "Intensive training in digital tools and online platforms to improve employability for young job seekers.",
+      "Description": "This 8-week boot camp teaches unemployed youth aged 18-30 essential digital skills including office software, email communication, online job search techniques, and professional social media use. Participants also receive training in creating CVs, interview preparation, and basic freelancing platforms. The program has served 420 young people, with 68% gaining employment or freelance work within three months of completion. Success stories include virtual assistants, data entry specialists, and social media managers now earning sustainable incomes.",
+      "ImageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+      "IsFeatured": false,
+      "Likes": 142
+    },
+    {
+      "Id": 22,
+      "Title": "Beekeeping for Rural Livelihoods",
+      "Category": "Economic Growth",
+      "Summary": "Training farmers in modern beekeeping techniques to generate supplementary income and support pollination.",
+      "Description": "Our beekeeping program has trained 180 farmers and provided starter kits including hives, protective gear, and harvesting equipment. Participants learn sustainable beekeeping practices, honey processing, and business skills to market their products. Beyond income generation, the bees provide crucial pollination services that improve crop yields for fruit and vegetable farmers. The program has resulted in the production of over 4,000 kilograms of honey annually, with beekeepers earning an average of $400 per year in supplementary income. Several cooperatives have formed to market honey collectively under a regional brand.",
+      "ImageUrl": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+      "IsFeatured": false,
+      "Likes": 71
+    },
+    {
+      "Id": 23,
+      "Title": "School Feeding Program",
+      "Category": "Education",
+      "Summary": "Providing nutritious meals to primary school students to improve attendance, health, and learning outcomes.",
+      "Description": "Hunger significantly impacts children\u0027s ability to learn. Our school feeding program provides a hot lunch to 3,500 students across 14 primary schools in food-insecure areas. Meals are prepared by local cooks using locally sourced ingredients, supporting both students and local farmers. Since implementation, school attendance has increased by 28%, and teachers report improved concentration and classroom behavior. The program also includes nutrition education and kitchen gardens at each school where students learn about healthy eating and agriculture.",
+      "ImageUrl": "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f",
+      "IsFeatured": true,
+      "Likes": 312
+    },
+    {
+      "Id": 24,
+      "Title": "Mental Health Awareness Campaign",
+      "Category": "Health",
+      "Summary": "Reducing stigma and improving access to mental health support through community education and counseling services.",
+      "Description": "Mental health remains heavily stigmatized, preventing many from seeking help. Our campaign uses community theater, radio programs, and peer educators to raise awareness and normalize conversations about mental health. We\u0027ve trained 30 community counselors who provide basic support and referrals, and established support groups for those dealing with depression, anxiety, and trauma. The program has reached over 25,000 people through outreach activities, and counseling services have assisted 800 individuals. Post-campaign surveys show a 45% increase in community members who would consider seeking mental health support.",
+      "ImageUrl": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34",
+      "IsFeatured": false,
+      "Likes": 194
+    },
+    {
+      "Id": 25,
+      "Title": "Youth Leadership Academy",
+      "Category": "Youth Empowerment",
+      "Summary": "Developing the next generation of community leaders through intensive training in civic engagement and project management.",
+      "Description": "This selective program brings together 50 outstanding young people annually for a year-long leadership development experience. Participants engage in workshops on communication, conflict resolution, public speaking, and project planning. Each cohort designs and implements a community service project, receiving mentorship and a small grant for implementation. Alumni have gone on to launch 35 community initiatives, run for local office, and establish youth organizations. The program has created a network of 200 young leaders who continue collaborating on social issues.",
+      "ImageUrl": "https://images.unsplash.com/photo-1529070538774-1843cb3265df",
+      "IsFeatured": false,
+      "Likes": 158
+    },
+    {
+      "Id": 26,
+      "Title": "Rainwater Harvesting Systems",
+      "Category": "Environment",
+      "Summary": "Installing rainwater collection systems to improve water security in drought-prone regions.",
+      "Description": "In areas where water scarcity limits agriculture and household use, we\u0027ve installed 450 rainwater harvesting systems at schools, clinics, and individual homes. Each system includes gutters, storage tanks, and basic filtration, capturing water during rainy seasons for use during dry periods. The systems provide an average of 8,000 liters of water storage per installation. Communities report reduced time spent fetching water from distant sources, improved hygiene, and the ability to maintain vegetable gardens year-round. The project includes maintenance training and has reduced water-related conflicts in participating communities.",
+      "ImageUrl": "https://images.unsplash.com/photo-1560272564-c83b66b1ad12",
+      "IsFeatured": false,
+      "Likes": 106
+    },
+    {
+      "Id": 27,
+      "Title": "Financial Literacy Workshops",
+      "Category": "Economic Growth",
+      "Summary": "Teaching essential money management skills to help families build savings and make informed financial decisions.",
+      "Description": "These interactive workshops cover budgeting, saving, debt management, and basic investment concepts using practical examples relevant to participants\u0027 lives. Sessions are offered in community centers and workplaces, reaching 1,800 people in the past year. Participants create personal budgets, set savings goals, and learn to evaluate financial products. Follow-up surveys show that 76% of participants have started regular savings, and household debt levels have decreased by an average of 30%. The program has been particularly impactful for women managing household finances and young people making their first financial decisions.",
+      "ImageUrl": "https://images.unsplash.com/photo-1554224311-beee460201b4",
+      "IsFeatured": false,
+      "Likes": 119
     }
   ]
 }
