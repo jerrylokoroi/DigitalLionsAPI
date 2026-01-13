@@ -1,17 +1,33 @@
 using DigitalLionsAPI.Models;
 using DigitalLionsAPI.Services;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure services
-var dataFilePath = Path.Combine(builder.Environment.ContentRootPath, "Data", "stories.json");
-builder.Services.AddSingleton<IStoryService>(new StoryService(dataFilePath));
+var dataFilePath = builder.Configuration["DataFilePath"];
+if (string.IsNullOrEmpty(dataFilePath))
+{
+    dataFilePath = "Data/stories.json";
+}
+var fullDataPath = Path.Combine(builder.Environment.ContentRootPath, dataFilePath);
+
+builder.Services.AddSingleton<IStoryService>(sp =>
+{
+    var logger = sp.GetService<ILogger<StoryService>>();
+    return new StoryService(fullDataPath, logger);
+});
+
+// Configure CORS from appsettings
+var corsOrigins = builder.Configuration.GetSection("CorsOrigins").Get<string[]>() 
+                  ?? new[] { "http://localhost:5173", "http://localhost:3000" };
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
+        policy.WithOrigins(corsOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -28,56 +44,187 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Add HTTPS redirection for production
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseCors("AllowFrontend");
 
-// GET /stories - Returns all stories
-app.MapGet("/stories", async (IStoryService storyService) =>
+// Global exception handler
+app.UseExceptionHandler(exceptionHandlerApp =>
 {
-    var stories = await storyService.GetAllStoriesAsync();
-    return Results.Ok(stories);
+    exceptionHandlerApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = "application/json";
+        
+        var error = new ErrorResponse
+        {
+            Message = "An unexpected error occurred",
+            StatusCode = 500,
+            Details = app.Environment.IsDevelopment() 
+                ? context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error.Message 
+                : null
+        };
+        
+        await context.Response.WriteAsJsonAsync(error);
+    });
+});
+
+// GET /stories - Returns all stories
+app.MapGet("/stories", async (IStoryService storyService, ILogger<Program> logger) =>
+{
+    try
+    {
+        var stories = await storyService.GetAllStoriesAsync();
+        var response = stories.Select(StoryResponse.FromDomain).ToList();
+        return Results.Ok(response);
+    }
+    catch (InvalidOperationException ex)
+    {
+        logger.LogError(ex, "Failed to retrieve stories");
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: StatusCodes.Status500InternalServerError,
+            title: "Failed to retrieve stories"
+        );
+    }
 })
 .WithName("GetAllStories")
-.WithOpenApi();
+.WithOpenApi()
+.Produces<List<StoryResponse>>(StatusCodes.Status200OK)
+.Produces<ProblemDetails>(StatusCodes.Status500InternalServerError);
 
 // GET /stories/{id} - Returns a single story
-app.MapGet("/stories/{id:int}", async (int id, IStoryService storyService) =>
+app.MapGet("/stories/{id:int}", async (int id, IStoryService storyService, ILogger<Program> logger) =>
 {
-    var story = await storyService.GetStoryByIdAsync(id);
-    return story is not null ? Results.Ok(story) : Results.NotFound(new { message = "Story not found" });
+    try
+    {
+        if (id <= 0)
+        {
+            return Results.BadRequest(new ErrorResponse 
+            { 
+                Message = "Invalid story ID", 
+                StatusCode = 400 
+            });
+        }
+
+        var story = await storyService.GetStoryByIdAsync(id);
+        
+        if (story is null)
+        {
+            return Results.NotFound(new ErrorResponse 
+            { 
+                Message = $"Story with ID {id} not found", 
+                StatusCode = 404 
+            });
+        }
+
+        return Results.Ok(StoryResponse.FromDomain(story));
+    }
+    catch (InvalidOperationException ex)
+    {
+        logger.LogError(ex, "Failed to retrieve story {StoryId}", id);
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: StatusCodes.Status500InternalServerError,
+            title: "Failed to retrieve story"
+        );
+    }
 })
 .WithName("GetStoryById")
-.WithOpenApi();
+.WithOpenApi()
+.Produces<StoryResponse>(StatusCodes.Status200OK)
+.Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
+.Produces<ErrorResponse>(StatusCodes.Status404NotFound)
+.Produces<ProblemDetails>(StatusCodes.Status500InternalServerError);
 
 // POST /stories/{id}/like - Increments like count
-app.MapPost("/stories/{id:int}/like", async (int id, IStoryService storyService) =>
+app.MapPost("/stories/{id:int}/like", async (int id, IStoryService storyService, ILogger<Program> logger) =>
 {
-    var story = await storyService.IncrementLikesAsync(id);
-    return story is not null ? Results.Ok(story) : Results.NotFound(new { message = "Story not found" });
+    try
+    {
+        if (id <= 0)
+        {
+            return Results.BadRequest(new ErrorResponse 
+            { 
+                Message = "Invalid story ID", 
+                StatusCode = 400 
+            });
+        }
+
+        var story = await storyService.IncrementLikesAsync(id);
+        
+        if (story is null)
+        {
+            return Results.NotFound(new ErrorResponse 
+            { 
+                Message = $"Story with ID {id} not found", 
+                StatusCode = 404 
+            });
+        }
+
+        return Results.Ok(StoryResponse.FromDomain(story));
+    }
+    catch (InvalidOperationException ex)
+    {
+        logger.LogError(ex, "Failed to like story {StoryId}", id);
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: StatusCodes.Status500InternalServerError,
+            title: "Failed to like story"
+        );
+    }
 })
 .WithName("LikeStory")
-.WithOpenApi();
+.WithOpenApi()
+.Produces<StoryResponse>(StatusCodes.Status200OK)
+.Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
+.Produces<ErrorResponse>(StatusCodes.Status404NotFound)
+.Produces<ProblemDetails>(StatusCodes.Status500InternalServerError);
 
 // POST /stories - Creates a new story (BONUS)
-app.MapPost("/stories", async (CreateStoryRequest request, IStoryService storyService) =>
+app.MapPost("/stories", async (CreateStoryRequest request, IStoryService storyService, ILogger<Program> logger) =>
 {
-    // Basic validation
-    if (string.IsNullOrWhiteSpace(request.Title))
-        return Results.BadRequest(new { message = "Title is required" });
+    try
+    {
+        // Validate using Data Annotations
+        var validationResults = new List<ValidationResult>();
+        var validationContext = new ValidationContext(request);
+        
+        if (!Validator.TryValidateObject(request, validationContext, validationResults, true))
+        {
+            var errors = validationResults.Select(v => v.ErrorMessage).ToList();
+            return Results.BadRequest(new ErrorResponse
+            {
+                Message = "Validation failed",
+                StatusCode = 400,
+                Details = string.Join("; ", errors)
+            });
+        }
 
-    if (string.IsNullOrWhiteSpace(request.Category))
-        return Results.BadRequest(new { message = "Category is required" });
-
-    if (string.IsNullOrWhiteSpace(request.Summary))
-        return Results.BadRequest(new { message = "Summary is required" });
-
-    if (string.IsNullOrWhiteSpace(request.Description))
-        return Results.BadRequest(new { message = "Description is required" });
-
-    var newStory = await storyService.CreateStoryAsync(request);
-    return Results.Created($"/stories/{newStory.Id}", newStory);
+        var newStory = await storyService.CreateStoryAsync(request);
+        var response = StoryResponse.FromDomain(newStory);
+        
+        return Results.Created($"/stories/{newStory.Id}", response);
+    }
+    catch (InvalidOperationException ex)
+    {
+        logger.LogError(ex, "Failed to create story");
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: StatusCodes.Status500InternalServerError,
+            title: "Failed to create story"
+        );
+    }
 })
 .WithName("CreateStory")
-.WithOpenApi();
+.WithOpenApi()
+.Produces<StoryResponse>(StatusCodes.Status201Created)
+.Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
+.Produces<ProblemDetails>(StatusCodes.Status500InternalServerError);
 
 app.Run();
 
